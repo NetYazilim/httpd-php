@@ -8,7 +8,9 @@ ENV WEB_CONF "/etc/apache2/httpd.conf"
 ADD *.php /var/www/localhost/htdocs/
 ADD entrypoint.sh /bin/entrypoint.sh
 
-RUN apk add --update --no-cache apache2 php7-apache2 
+RUN apk update && \
+    apk upgrade && \
+    apk add --update --no-cache apache2 php7-apache2 
 
 RUN mkdir -p /run/apache2  
 RUN sed -i 's/DirectoryIndex index\.html/DirectoryIndex index\.php index\.html/g' /etc/apache2/httpd.conf
