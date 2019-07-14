@@ -1,4 +1,4 @@
-FROM netyazilim/alpine-base:3.8
+FROM netyazilim/alpine-base:3.10
 
 LABEL maintainer "Levent SAGIROGLU <LSagiroglu@gmail.com>"
 
